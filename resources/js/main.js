@@ -7,9 +7,9 @@ document.getElementById('item').addEventListener('keydown', function(e) {
     if (e.keyCode == 13) {
         checkItem();
     }
-});
+}, false);
 
-document.getElementById('add').addEventListener('click', checkItem);
+document.getElementById('add').addEventListener('click', checkItem, false);
 
 function checkItem() {
     var value = document.getElementById('item').value;
@@ -53,14 +53,14 @@ function addItemTodo(text) {
 	remove.innerHTML = removeSVG;
 
 	// Add click event for removing the item
-	remove.addEventListener('click', removeItem);
+	remove.addEventListener('click', removeItem, false);
 
 	var complete = document.createElement('button');
 	complete.classList.add('complete');
 	complete.innerHTML = completeSVG;
 
 	// Add click event for completing the item
-	complete.addEventListener('click', completeItem);
+	complete.addEventListener('click', completeItem, false);
 
 	buttons.appendChild(remove);
 	buttons.appendChild(complete);
